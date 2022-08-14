@@ -1,18 +1,8 @@
 #![allow(non_snake_case)]
 
 use lattice_type::config::Config;
-use lattice_type::lattice;
+use lattice_type::{lattice, combi2};
 use lattice_type::potentials::{Exp6, Potential, LJ};
-
-fn combi2(n: usize) -> Vec<Vec<usize>> {
-    let mut ret = vec![];
-    for i in 0..n {
-        for j in i + 1..n {
-            ret.push(vec![i, j]);
-        }
-    }
-    ret
-}
 
 fn main() {
     // read input
