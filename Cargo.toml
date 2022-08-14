@@ -1,0 +1,21 @@
+[package]
+name = "lattice-type"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+ndarray = { version = "0.15", features = ["blas"] }
+blas-src = { version = "0.8", features = ["openblas"] }
+openblas-src = { version = "0.10", features = ["cblas", "static"] }
+
+[profile.dev]
+opt-level = "s"
+
+[profile.release]
+panic = "abort"
+lto = true
+codegen-units = 1
+strip = true
+opt-level = "s"
