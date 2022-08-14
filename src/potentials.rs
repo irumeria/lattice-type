@@ -1,7 +1,7 @@
 #![allow(non_snake_case)]
 
-pub trait Potential{
-	fn getEnergy(&self, r: f64) -> f64;
+pub trait Potential {
+    fn getEnergy(&self, r: f64) -> f64;
 }
 
 pub struct LJ {
@@ -18,7 +18,7 @@ impl LJ {
     }
 }
 
-impl Potential for LJ{
+impl Potential for LJ {
     fn getEnergy(&self, r: f64) -> f64 {
         assert!(r >= 1e-6);
         4. * self.epsilon * ((self.sigma / r).powf(12.) - (self.sigma / r).powf(6.))
@@ -41,9 +41,9 @@ impl Exp6 {
     }
 }
 
-impl Potential for Exp6{
-	fn getEnergy(&self, r:f64)->f64{
-		assert!(r >= 1e-6);
-		self.A*(-self.alpha*r).exp() - self.C/r.powf(6.)
-	}
+impl Potential for Exp6 {
+    fn getEnergy(&self, r: f64) -> f64 {
+        assert!(r >= 1e-6);
+        self.A * (-self.alpha * r).exp() - self.C / r.powf(6.)
+    }
 }
