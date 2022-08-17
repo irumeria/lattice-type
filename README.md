@@ -29,7 +29,7 @@ calculate the ground-state energy (typically, Lennard-Jones potential or exp-6 p
 ```
 
 ## Usage
-+ Run the code, this will list the energy and a of each epoch, and finally give the lowest energy of the calculation.
++ Run the code, this will list the energy and lattice parameter of each epoch, and finally give the lowest energy of the calculation.
 ```bash
 cargo run
 ```
